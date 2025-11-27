@@ -2,15 +2,28 @@
 using namespace std;
 
 int main() {
-    cout << "請輸入你的年齡" << endl;
-    int age;
-    cin >> age;
+    double height, weight, bmi;
 
-    if (age >= 18) {
-        cout << "你已滿 18 歲，是成年人。" << endl;
-    } else {
-        cout << "你未滿 18 歲，請專心於課業與自我成長。" << endl;
-    }
+    cout << "請輸入身高(cm): ";
+    cin >> height;
 
-    return 0;
+    cout << "請輸入體重(kg): ";
+    cin >> weight;
+
+    // 將身高轉換為公尺
+    height = height / 100.0;
+
+    // 計算 BMI
+    bmi = weight / (height * height);
+
+    cout << "您的 BMI = " << bmi << endl;
+    
+    if (bmi < 18.5) {
+    cout << "你可能過輕" << endl;
+} else if (bmi < 24.9) {
+    cout << "你可能正常" << endl;
+} else {
+     cout << "你可能過重"<< endl;
+}
+   return 0;
 }
